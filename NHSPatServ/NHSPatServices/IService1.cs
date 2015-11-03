@@ -13,9 +13,9 @@ namespace NHSPatServices
     public interface IService1
     {
         [OperationContract]
-        List<PlottableObject> GetPlottableObjects(SearchCriteria searchQuery);
+        List<PlottableObject> GetPlottableObjects(string gp, string question, string disease = "Asthma");
         [OperationContract]
-        List<MappableObject> GetMappableObjects(SearchCriteria searchQuery);
+        List<MappableObject> GetMappableObjects(string gp, string question, string disease = "Asthma");
     }//end service
 
     //the following data contracts, data members and enum members are available 
@@ -40,20 +40,71 @@ namespace NHSPatServices
         [DataMember]
         public string Name { get; set; }
         [DataMember]
-        public diseaseEnum Code { get; set; } 
+        public string Code { get; set; } 
 
         public Disease(string name)
         {
             this.Name = name;
-            this.Code = diseaseEnum.AST;
+            this.Code = setCode(name);
         }
-        public Disease(string name, diseaseEnum code)
-        {
-            this.Name = name;
-            this.Code = code;
-        }
-    }//end disease
 
+
+        public string setCode(string name)
+        {
+            switch (name)
+            {
+                case "Asthma":
+                    return "AST";
+                case "Chronic Obstructive Pulmonary Disease":
+                    return "COPD";
+                case "Thyroid":
+                    return "THY";
+                case "Hypertension":
+                    return "HYP";
+                case "Dementia":
+                    return "DEM";
+                case "Osteoporosis":
+                    return "OST";
+                case "Atrial Fibrillation":
+                    return "AF";
+                case "Heart Failure":
+                    return "HF";
+                case "Learning Disabilities":
+                    return "LD";
+                case "Coronary Heart Disease":
+                    return "CHD";
+                case "Epilepsy":
+                    return "EP";
+                case "Chronic Kidney Disease":
+                    return "CKD";
+                case "Rheumatoid Arthritis":
+                    return "RA";
+                case "Depression":
+                    return "DEP";
+                case "Diabetes":
+                    return "DM";
+                case "Cancer":
+                    return "CAN";
+                case "Smoking Indicators":
+                    return "SMOK";
+                case "Stroke":
+                    return "STIA";
+                case "Palliative Care":
+                    return "PC";
+                case "Mental Health":
+                    return "MH";
+                case "Peripheral Atrial Disease":
+                    return "PAD";
+                case "Obesity":
+                    return "OB";
+                case "Cardiovascular Disease - Primary Prevention":
+                    return "CVDPP";
+                default:
+                    return "NOT SET!!";
+
+            }//end switch
+        }//end setCode
+    }//end disease
     [DataContract]
     public class MappableObject
     {
@@ -84,109 +135,15 @@ namespace NHSPatServices
         [DataMember]
         public Disease disease { get; set; }
         [DataMember]
-        public Search search { get; set; }
+        public string question { get; set; }
+
+        public SearchCriteria(string gp, string question, string diseaseName = "Asthma")
+        {
+            this.gp = gp;
+            this.question = question;
+            this.disease = new Disease (diseaseName);
+
+        }
     }//end search criteria
-
-    [DataContract]
-    public enum Search
-    {
-        [EnumMember]
-        AverageAllDiseaseInEngland,
-        [EnumMember]
-        MaxAllDiseaseInEngland,
-        [EnumMember]
-        MinAllDiseaseInEngland,
-        [EnumMember]
-        AverageSpecificDiseaseInEngland,
-        [EnumMember]
-        MaxSpecificDiseaseInEngland,
-        [EnumMember]
-        MinSpecificDiseaseInEngland,
-        [EnumMember]
-        AverageAllDiseaseInNHSTrust,
-        [EnumMember]
-        MaxAllDiseaseInNHSTrust,
-        [EnumMember]
-        MinAllDiseaseInNHSTrust,
-        [EnumMember]
-        AverageSpecificDiseaseInNHSTrust,
-        [EnumMember]
-        MaxSpecificDiseaseInNHSTrust,
-        [EnumMember]
-        MinSpecificDiseaseInNHSTrust,
-        [EnumMember]
-        TotalAllDiseaseInSpecificGP,
-        [EnumMember]
-        TotalSpecificDiseaseInGP,
-        [EnumMember]
-        AverageStaffInEngland,
-        [EnumMember]
-        AverageStaffInNHSTrust,
-        [EnumMember]
-        TotalStaffInSpecificGP,
-        [EnumMember]
-        AveragePatientInEngland,
-        [EnumMember]
-        AveragePatientInNHSTrust,
-        [EnumMember]
-        TotalPatientInSpecificGP,
-        [EnumMember]
-        AverageRatingInEngland,
-        [EnumMember]
-        AverageRatingInTrust,
-        [EnumMember]
-        TotalRatingInGP,
-    }//end search
-
-    [DataContract]
-    public enum diseaseEnum
-    {
-        [EnumMember]
-        AST,
-        [EnumMember]
-        COPD,
-        [EnumMember]
-        THY,
-        [EnumMember]
-        HYP,
-        [EnumMember]
-        DEM,
-        [EnumMember]
-        OST,
-        [EnumMember]
-        AF,
-        [EnumMember]
-        HF,
-        [EnumMember]
-        LD,
-        [EnumMember]
-        CHD,
-        [EnumMember]
-        EP,
-        [EnumMember]
-        CKD,
-        [EnumMember]
-        RA,
-        [EnumMember]
-        DEP,
-        [EnumMember]
-        DM,
-        [EnumMember]
-        CAN,
-        [EnumMember]
-        SMOK,
-        [EnumMember]
-        STIA,
-        [EnumMember]
-        PC,
-        [EnumMember]
-        MH,
-        [EnumMember]
-        PAD,
-        [EnumMember]
-        OB,
-        [EnumMember]
-        CVDPP
-    }//end disease
 
 }//end class
