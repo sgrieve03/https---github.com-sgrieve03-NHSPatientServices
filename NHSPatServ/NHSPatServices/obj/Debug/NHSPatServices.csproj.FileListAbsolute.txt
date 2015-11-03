@@ -1,0 +1,12 @@
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\NHSPatServices.dll.config
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\NHSPatServices.dll
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\NHSPatServices.pdb
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\EntityFramework.dll
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\EntityFramework.SqlServer.dll
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\NHSPatServ.dll
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\NHSPatServ.pdb
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\EntityFramework.xml
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\bin\EntityFramework.SqlServer.xml
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\obj\Debug\NHSPatServices.csprojResolveAssemblyReference.cache
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\obj\Debug\NHSPatServices.dll
+C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServices\obj\Debug\NHSPatServices.pdb
