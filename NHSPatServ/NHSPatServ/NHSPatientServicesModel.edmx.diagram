@@ -4,7 +4,7 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="77c15b5a3fd343dc83acea04b92c1233" Name="Diagram1">
+      <Diagram DiagramId="1301ff086cd14a14a6e64b65fbef8f48" Name="Diagram1">
         <EntityTypeShape EntityType="NHSPatientServicesModel.Address" Width="1.5" PointX="5.25" PointY="5.25" IsExpanded="true" />
         <EntityTypeShape EntityType="NHSPatientServicesModel.Email" Width="1.5" PointX="5.25" PointY="8.5" IsExpanded="true" />
         <EntityTypeShape EntityType="NHSPatientServicesModel.Fax" Width="1.5" PointX="5.25" PointY="10.875" IsExpanded="true" />
@@ -20,8 +20,13 @@
         <EntityTypeShape EntityType="NHSPatientServicesModel.Parent" Width="1.5" PointX="3" PointY="22.375" IsExpanded="true" />
         <EntityTypeShape EntityType="NHSPatientServicesModel.ParentOrganisation" Width="1.5" PointX="5.25" PointY="21.25" IsExpanded="true" />
         <EntityTypeShape EntityType="NHSPatientServicesModel.ServicesOrganisation" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHSPatientServicesModel.sysdiagram" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <EntityTypeShape EntityType="NHSPatientServicesModel.Telephone" Width="1.5" PointX="5.25" PointY="34.875" IsExpanded="true" />
         <EntityTypeShape EntityType="NHSPatientServicesModel.Website" Width="1.5" PointX="5.25" PointY="37.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHSPatientServicesModel.GPDISEASESBYPRACTICECODE" Width="1.5" PointX="2.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHSPatientServicesModel.LATLONG" Width="1.5" PointX="0.75" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHSPatientServicesModel.NUMBEROFEMPLOYEE" Width="1.5" PointX="4.75" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="NHSPatientServicesModel.NUMBEROFPATIENT" Width="1.5" PointX="6.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="NHSPatientServicesModel.FK__Addresses__Ref_O__1CFC3D38" ManuallyRouted="false" />
         <AssociationConnector Association="NHSPatientServicesModel.FK__Email__Ref_Organ__155B1B70" ManuallyRouted="false" />
         <AssociationConnector Association="NHSPatientServicesModel.FK__Fax__Ref_Organis__0DB9F9A8" ManuallyRouted="false" />

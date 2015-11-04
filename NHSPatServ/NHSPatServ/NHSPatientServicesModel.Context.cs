@@ -15,10 +15,10 @@ namespace NHSPatServ
     using System.Data.Entity.Core.Objects;
     using System.Linq;
     
-    public partial class NHSPatientServicesEntities7 : DbContext
+    public partial class NHSPatientServicesEntities : DbContext
     {
-        public NHSPatientServicesEntities7()
-            : base("name=NHSPatientServicesEntities7")
+        public NHSPatientServicesEntities()
+            : base("name=NHSPatientServicesEntities")
         {
         }
     
@@ -42,8 +42,13 @@ namespace NHSPatServ
         public virtual DbSet<Parent> Parents { get; set; }
         public virtual DbSet<ParentOrganisation> ParentOrganisations { get; set; }
         public virtual DbSet<ServicesOrganisation> ServicesOrganisations { get; set; }
+        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<Telephone> Telephones { get; set; }
         public virtual DbSet<Website> Websites { get; set; }
+        public virtual DbSet<GPDISEASESBYPRACTICECODE> GPDISEASESBYPRACTICECODEs { get; set; }
+        public virtual DbSet<LATLONG> LATLONGs { get; set; }
+        public virtual DbSet<NUMBEROFEMPLOYEE> NUMBEROFEMPLOYEES { get; set; }
+        public virtual DbSet<NUMBEROFPATIENT> NUMBEROFPATIENTS { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {

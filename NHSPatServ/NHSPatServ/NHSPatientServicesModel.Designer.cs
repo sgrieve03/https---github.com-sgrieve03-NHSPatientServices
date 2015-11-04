@@ -1,4 +1,4 @@
-﻿// T4 code generation is enabled for model 'C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServ\NHSPatientServicesModel.edmx'. 
+﻿// T4 code generation is enabled for model 'C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\NHSPatientServicesModel.edmx'. 
 // To enable legacy code generation, change the value of the 'Code Generation Strategy' designer
 // property to 'Legacy ObjectContext'. This property is available in the Properties Window when the model
 // is open in the designer.

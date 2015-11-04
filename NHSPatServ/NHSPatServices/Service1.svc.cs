@@ -9,17 +9,24 @@ using System.Text;
 namespace NHSPatServices
 {
     public class Service1 : IService1
-    {   
+    {
         //create object to connect service to database entities
-        NHSPatServ.NHSPatientServicesEntities7 dbContext = new NHSPatServ.NHSPatientServicesEntities7();
+        NHSPatServ.NHSPatientServicesEntities dbContext;
+        
+        public Service1()
+        {
+            dbContext = new NHSPatServ.NHSPatientServicesEntities();
 
+        }
 
         //this method returns a list of objects which can be plotted on a map
-        public List<MappableObject> GetMappableObjects(SearchCriteria searchQuery)
+        public List<MappableObject> GetMappableObjects(string gp, string question, string diseaseName = "Asthma")
         {
+            SearchCriteria searchQuery = new SearchCriteria(gp, question, diseaseName);
             List<MappableObject> myList = new List<MappableObject>();
             MappableObject pobj;
-            var diseaseTotals = dbContext.sp_AverageSpecificDiseaseInNHSTrust(searchQuery.gp, searchQuery.disease.Code.ToString());
+            var diseaseTotals = dbContext.sp_AverageSpecificDiseaseInNHSTrust(gp, searchQuery.disease.Code);
+            
             var result = dbContext.sp_plot();
             foreach (var r in result)
             {
@@ -27,10 +34,10 @@ namespace NHSPatServices
                 myList.Add(pobj);
 
             }
-
+            int i = 0;
             foreach(var v in diseaseTotals)
             {
-
+                myList.ElementAt(i).Information +=searchQuery.disease.Name+": "+ v.Value;
             }
             
             
@@ -40,32 +47,43 @@ namespace NHSPatServices
 
      
         //this method returns a list of objects which can be plotted on a graph. the list is determined by the search criteria
-        public List<PlottableObject> GetPlottableObjects(SearchCriteria searchQuery)
+        public List<PlottableObject> GetPlottableObjects(string gp, string question, string diseaseName = "Asthma" )
         {
+            SearchCriteria searchQuery = new SearchCriteria(gp, question, diseaseName);
+
             PlottableObject obj;
             List<PlottableObject> objList = new List<PlottableObject>();
+            objList.Add(new PlottableObject("fordfs", 22));
 
-            switch (searchQuery.search)
+            dbContext = new NHSPatServ.NHSPatientServicesEntities();
+
+            switch (searchQuery.question)
             {
-                case Search.AverageAllDiseaseInEngland:
+                case "AverageAllDiseaseInEngland":
                     try
                     {
+                        PlottableObject objy;
+                        List<PlottableObject> objListy = new List<PlottableObject>();
+                       
                         var result = dbContext.sp_AverageAllDiseaseInEngland();
 
                         if (result != null)
                         {
                             foreach (var r in result)
                             {
-                                obj = new PlottableObject(r.Disease_Name.TrimEnd(), (double)r.Average_Number_of_Cases);
-                                objList.Add(obj);
+                                objy = new PlottableObject(r.Disease_Name.TrimEnd(), (double)r.Average_Number_of_Cases);
+                                objListy.Add(objy);
 
                             }
+                            return objListy;
                         }
+                        
                     }
                     catch { Exception ex; }
+                    
                     break;
 
-                case Search.AverageAllDiseaseInNHSTrust:
+                case "AverageAllDiseaseInNHSTrust":
                     try
                     {
                         var result = dbContext.sp_AverageAllDiseaseInNHSTrust(searchQuery.gp);
@@ -82,7 +100,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.AveragePatientInEngland:
+                case "AveragePatientInEngland":
                     try
                     {
                         var result = dbContext.sp_AveragePatientInEngland();
@@ -99,7 +117,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.AveragePatientInNHSTrust:
+                case "AveragePatientInNHSTrust":
                     try
                     {
                         var result = dbContext.sp_AveragePatientInNHSTrust(searchQuery.gp);
@@ -116,7 +134,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.AverageRatingInEngland:
+                case "AverageRatingInEngland":
                     try
                     {
                         var result = dbContext.sp_AverageRatingInEngland();
@@ -141,7 +159,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.AverageRatingInTrust:
+                case "AverageRatingInTrust":
                     try
                     {
                         var result = dbContext.sp_AverageRatingInTrust(searchQuery.gp);
@@ -169,10 +187,10 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.AverageSpecificDiseaseInEngland:
+                case "AverageSpecificDiseaseInEngland":
                     try
                     {
-                        var result = dbContext.sp_AverageSpecificDiseaseInEngland(searchQuery.disease.Code.ToString());
+                        var result = dbContext.sp_AverageSpecificDiseaseInEngland(searchQuery.disease.Code);
 
                         if (result != null)
                         {
@@ -186,10 +204,10 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.AverageSpecificDiseaseInNHSTrust:
+                case "AverageSpecificDiseaseInNHSTrust":
                     try
                     {
-                        var result = dbContext.sp_AverageSpecificDiseaseInNHSTrust(searchQuery.disease.Code.ToString(), searchQuery.gp);
+                        var result = dbContext.sp_AverageSpecificDiseaseInNHSTrust(searchQuery.disease.Code, searchQuery.gp);
                         var result2 = dbContext.sp_NameOfTrust(searchQuery.gp);
                         if (result != null)
                         {
@@ -203,7 +221,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.AverageStaffInEngland:
+                case "AverageStaffInEngland":
                     try
                     {
                         var result = dbContext.sp_AverageStaffInEngland();
@@ -220,7 +238,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.AverageStaffInNHSTrust:
+                case "AverageStaffInNHSTrust":
                     try
                     {
                         var result = dbContext.sp_AverageStaffInNHSTrust(searchQuery.gp);
@@ -238,7 +256,7 @@ namespace NHSPatServices
                     catch { Exception ex; }
                     break;
          
-                case Search.MaxAllDiseaseInEngland:
+                case "MaxAllDiseaseInEngland":
                     try
                     {
                         var result = dbContext.sp_MaxAllDiseaseInEngland();
@@ -255,7 +273,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.MaxAllDiseaseInNHSTrust:
+                case "MaxAllDiseaseInNHSTrust":
                     try
                     {
                         var result = dbContext.sp_MaxAllDiseaseInNHSTrust(searchQuery.gp);
@@ -272,10 +290,10 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.MaxSpecificDiseaseInEngland:
+                case "MaxSpecificDiseaseInEngland":
                     try
                     {
-                        var result = dbContext.sp_MaxSpecificDiseaseInEngland(searchQuery.disease.Code.ToString());
+                        var result = dbContext.sp_MaxSpecificDiseaseInEngland(searchQuery.disease.Code);
 
                         if (result != null)
                         {
@@ -289,10 +307,10 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.MaxSpecificDiseaseInNHSTrust:
+                case "MaxSpecificDiseaseInNHSTrust":
                     try
                     {
-                        var result = dbContext.sp_MaxSpecificDiseaseInNHSTrust(searchQuery.disease.Code.ToString(), searchQuery.gp);
+                        var result = dbContext.sp_MaxSpecificDiseaseInNHSTrust(searchQuery.disease.Code, searchQuery.gp);
 
                         if (result != null)
                         {
@@ -306,7 +324,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.MinAllDiseaseInEngland:
+                case "MinAllDiseaseInEngland":
                     try
                     {
                         var result = dbContext.sp_MinAllDiseaseInEngland();
@@ -323,7 +341,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.MinAllDiseaseInNHSTrust:
+                case "MinAllDiseaseInNHSTrust":
                     try
                     {
                         var result = dbContext.sp_MinAllDiseaseInNHSTrust(searchQuery.gp);
@@ -340,7 +358,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.MinSpecificDiseaseInEngland:
+                case "MinSpecificDiseaseInEngland":
                     try
                     {
                         var result = dbContext.sp_MinSpecificDiseaseInEngland(searchQuery.disease.Code.ToString());
@@ -357,7 +375,7 @@ namespace NHSPatServices
                     }
                     catch { Exception ex; }
                     break;
-                case Search.MinSpecificDiseaseInNHSTrust:
+                case "MinSpecificDiseaseInNHSTrust":
                     try
                     {
                         var result = dbContext.sp_MinSpecificDiseaseInNHSTrust(searchQuery.disease.Code.ToString(), searchQuery.gp);
@@ -376,7 +394,7 @@ namespace NHSPatServices
                     break;
                 
                 // returns the total number of a specific disease from a specific gp
-                case Search.TotalAllDiseaseInSpecificGP:
+                case "TotalAllDiseaseInSpecificGP":
                     try
                     {
                         var result = dbContext.sp_TotalAllDiseaseInSpecificGP(searchQuery.gp);
@@ -394,7 +412,7 @@ namespace NHSPatServices
                     catch { Exception ex; }
                     break;
 
-                case Search.TotalPatientInSpecificGP:
+                case "TotalPatientInSpecificGP":
                     try
                     {
                         var result = dbContext.sp_TotalPatientInSpecificGP(searchQuery.gp);
@@ -413,7 +431,7 @@ namespace NHSPatServices
                     break;
 
                 //returns the total rating for a particular gp with regards waiting times
-                case Search.TotalRatingInGP:
+                case "TotalRatingInGP":
                     try
                     {
                         var result = dbContext.sp_TotalRatingInGP(searchQuery.gp);
@@ -440,10 +458,10 @@ namespace NHSPatServices
                     break;
 
                 //this element returns the title and count of a particular illness
-                case Search.TotalSpecificDiseaseInGP:
+                case "TotalSpecificDiseaseInGP":
                     try
                     {
-                        var result = dbContext.sp_TotalSpecificDiseaseInGP(searchQuery.disease.Code.ToString(), searchQuery.gp);
+                        var result = dbContext.sp_TotalSpecificDiseaseInGP(searchQuery.disease.Code, searchQuery.gp);
 
                         if (result != null)
                         {
@@ -460,7 +478,7 @@ namespace NHSPatServices
 
                 //this element of the switch returns the title and quantity of each type 
                 //of staff employed at a single gp practice
-                case Search.TotalStaffInSpecificGP:
+                case "TotalStaffInSpecificGP":
                     try
                     {
                         var result = dbContext.sp_TotalStaffInSpecificGP(searchQuery.gp);

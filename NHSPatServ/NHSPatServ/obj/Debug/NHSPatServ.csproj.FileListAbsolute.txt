@@ -7,3 +7,12 @@ C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatS
 C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServ\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServ\obj\Debug\NHSPatServ.dll
 C:\Users\Neueda_Grad\Documents\GitHub\neueda\PieChart_Example\NHSPatServ\NHSPatServ\obj\Debug\NHSPatServ.pdb
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\bin\Debug\NHSPatServ.dll.config
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\bin\Debug\NHSPatServ.dll
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\bin\Debug\NHSPatServ.pdb
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\bin\Debug\EntityFramework.dll
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\bin\Debug\EntityFramework.xml
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\obj\Debug\NHSPatServ.dll
+C:\Users\Neueda_Grad\Desktop\https---github.com-sgrieve03-NHSPatientServices.git\NHSPatServ\NHSPatServ\obj\Debug\NHSPatServ.pdb

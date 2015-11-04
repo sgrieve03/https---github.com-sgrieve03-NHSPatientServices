@@ -150,6 +150,16 @@
           <Property Name="Ref_Organisation_Details_ID" Type="int" Nullable="false" />
           <Property Name="Ref_Service_ID" Type="int" Nullable="false" />
         </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
         <EntityType Name="Telephone">
           <Key>
             <PropertyRef Name="Ref_Organisation_Details_ID" />
@@ -166,6 +176,92 @@
           <Property Name="Ref_Organisation_Details_ID" Type="int" Nullable="false" />
           <Property Name="Website" Type="char" MaxLength="255" Nullable="false" />
         </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NHSPatientServices.dbo.AVERAGENUMBEROFPATIENTS' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AVERAGENUMBEROFPATIENTS">
+          <Property Name="Parent_Name" Type="varchar(max)" />
+          <Property Name="Average_Number_of_Patients" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NHSPatientServices.dbo.AVERAGENUMBEROFSTAFF' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AVERAGENUMBEROFSTAFF">
+          <Property Name="Parent_Name" Type="varchar(max)" />
+          <Property Name="Average_Number_of_Staff" Type="int" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NHSPatientServices.dbo.AVERAGERATING' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="AVERAGERATING">
+          <Property Name="Ref_Parent_ID" Type="int" />
+          <Property Name="Q14_Cant_Remember" Type="float" />
+          <Property Name="Q14_Few_Days_Later" Type="float" />
+          <Property Name="Q14_Week_Or_More" Type="float" />
+          <Property Name="Q14_Next_Working_Day" Type="float" />
+          <Property Name="Q14_On_Same_day" Type="float" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NHSPatientServices.dbo.ENGLANDDISEASEAVG' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="ENGLANDDISEASEAVG">
+          <Property Name="average" Type="int" />
+          <Property Name="Disease_Name" Type="char" MaxLength="255" />
+          <Property Name="Indicator_Group" Type="char" MaxLength="25" />
+        </EntityType>-->
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NHSPatientServices.dbo.GPDISEASESBYPRACTICECODE' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="GPDISEASESBYPRACTICECODE">
+          <Key>
+            <PropertyRef Name="Number_of_cases" />
+          </Key>
+          <Property Name="OrganisationCode" Type="char" MaxLength="25" />
+          <Property Name="Ref_Parent_ID" Type="int" />
+          <Property Name="indicator_group" Type="char" MaxLength="25" />
+          <Property Name="disease_Name" Type="char" MaxLength="255" />
+          <Property Name="Number_of_cases" Type="int" Nullable="false" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NHSPatientServices.dbo.LATLONG' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="LATLONG">
+          <Key>
+            <PropertyRef Name="Parent_ID" />
+          </Key>
+          <Property Name="Parent_Name" Type="varchar(max)" />
+          <Property Name="Parent_ID" Type="int" Nullable="false" />
+          <Property Name="Latitude" Type="float" />
+          <Property Name="Longitude" Type="float" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NHSPatientServices.dbo.NUMBEROFEMPLOYEES' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NUMBEROFEMPLOYEES">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Organisation_Name" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Organisation_Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="OrganisationCode" Type="char" MaxLength="25" />
+          <Property Name="Parent_Name" Type="varchar(max)" />
+          <Property Name="Ref_Parent_ID" Type="int" />
+          <Property Name="Number_of_Staff" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6002: The table/view 'NHSPatientServices.dbo.NUMBEROFPATIENTS' does not have a primary key defined. The key has been inferred and the definition was created as a read-only table/view.-->
+        <EntityType Name="NUMBEROFPATIENTS">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Organisation_Name" />
+          </Key>
+          <Property Name="ID" Type="int" Nullable="false" />
+          <Property Name="Organisation_Name" Type="varchar(max)" Nullable="false" />
+          <Property Name="OrganisationCode" Type="char" MaxLength="25" />
+          <Property Name="Parent_Name" Type="varchar(max)" />
+          <Property Name="Ref_Parent_ID" Type="int" />
+          <Property Name="Total_Patients" Type="int" />
+        </EntityType>
+        <!--Errors Found During Generation:
+warning 6013: The table/view 'NHSPatientServices.dbo.PREDIVISION' does not have a primary key defined and no valid primary key could be inferred. This table/view has been excluded. To use the entity, you will need to review your schema, add the correct keys, and uncomment it.
+        <EntityType Name="PREDIVISION">
+          <Property Name="OrganisationCode" Type="char" MaxLength="25" />
+          <Property Name="total" Type="float" />
+        </EntityType>-->
         <Association Name="FK__Addresses__Ref_O__1CFC3D38">
           <End Role="Organisation_Details" Type="Self.Organisation_Details" Multiplicity="1" />
           <End Role="Addresses" Type="Self.Addresses" Multiplicity="0..1" />
@@ -473,8 +569,46 @@
           <EntitySet Name="Parent" EntityType="Self.Parent" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ParentOrganisation" EntityType="Self.ParentOrganisation" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="ServicesOrganisation" EntityType="Self.ServicesOrganisation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Telephone" EntityType="Self.Telephone" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Website" EntityType="Self.Website" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="GPDISEASESBYPRACTICECODE" EntityType="Self.GPDISEASESBYPRACTICECODE" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [GPDISEASESBYPRACTICECODE].[OrganisationCode] AS [OrganisationCode], 
+    [GPDISEASESBYPRACTICECODE].[Ref_Parent_ID] AS [Ref_Parent_ID], 
+    [GPDISEASESBYPRACTICECODE].[indicator_group] AS [indicator_group], 
+    [GPDISEASESBYPRACTICECODE].[disease_Name] AS [disease_Name], 
+    [GPDISEASESBYPRACTICECODE].[Number_of_cases] AS [Number_of_cases]
+    FROM [dbo].[GPDISEASESBYPRACTICECODE] AS [GPDISEASESBYPRACTICECODE]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="LATLONG" EntityType="Self.LATLONG" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [LATLONG].[Parent_Name] AS [Parent_Name], 
+    [LATLONG].[Parent_ID] AS [Parent_ID], 
+    [LATLONG].[Latitude] AS [Latitude], 
+    [LATLONG].[Longitude] AS [Longitude]
+    FROM [dbo].[LATLONG] AS [LATLONG]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NUMBEROFEMPLOYEES" EntityType="Self.NUMBEROFEMPLOYEES" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NUMBEROFEMPLOYEES].[ID] AS [ID], 
+    [NUMBEROFEMPLOYEES].[Organisation_Name] AS [Organisation_Name], 
+    [NUMBEROFEMPLOYEES].[OrganisationCode] AS [OrganisationCode], 
+    [NUMBEROFEMPLOYEES].[Parent_Name] AS [Parent_Name], 
+    [NUMBEROFEMPLOYEES].[Ref_Parent_ID] AS [Ref_Parent_ID], 
+    [NUMBEROFEMPLOYEES].[Number_of_Staff] AS [Number_of_Staff]
+    FROM [dbo].[NUMBEROFEMPLOYEES] AS [NUMBEROFEMPLOYEES]</DefiningQuery>
+          </EntitySet>
+          <EntitySet Name="NUMBEROFPATIENTS" EntityType="Self.NUMBEROFPATIENTS" store:Type="Views" store:Schema="dbo">
+            <DefiningQuery>SELECT 
+    [NUMBEROFPATIENTS].[ID] AS [ID], 
+    [NUMBEROFPATIENTS].[Organisation_Name] AS [Organisation_Name], 
+    [NUMBEROFPATIENTS].[OrganisationCode] AS [OrganisationCode], 
+    [NUMBEROFPATIENTS].[Parent_Name] AS [Parent_Name], 
+    [NUMBEROFPATIENTS].[Ref_Parent_ID] AS [Ref_Parent_ID], 
+    [NUMBEROFPATIENTS].[Total_Patients] AS [Total_Patients]
+    FROM [dbo].[NUMBEROFPATIENTS] AS [NUMBEROFPATIENTS]</DefiningQuery>
+          </EntitySet>
           <AssociationSet Name="FK__Addresses__Ref_O__1CFC3D38" Association="Self.FK__Addresses__Ref_O__1CFC3D38">
             <End Role="Organisation_Details" EntitySet="Organisation_Details" />
             <End Role="Addresses" EntitySet="Addresses" />
@@ -720,6 +854,16 @@
           <NavigationProperty Name="GP_Services" Relationship="Self.FK__ServicesO__Ref_S__7F6BDA51" FromRole="ServicesOrganisation" ToRole="GP_Services" />
           <NavigationProperty Name="Organisation_Details" Relationship="Self.FK__ServicesO__Ref_O__005FFE8A" FromRole="ServicesOrganisation" ToRole="Organisation_Details" />
         </EntityType>
+        <EntityType Name="sysdiagram">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
         <EntityType Name="Telephone">
           <Key>
             <PropertyRef Name="Ref_Organisation_Details_ID" />
@@ -737,6 +881,49 @@
           <Property Name="Ref_Organisation_Details_ID" Type="Int32" Nullable="false" />
           <Property Name="Website1" Type="String" MaxLength="255" FixedLength="true" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Organisation_Details" Relationship="Self.FK__Website__Ref_Org__192BAC54" FromRole="Website" ToRole="Organisation_Details" />
+        </EntityType>
+        <EntityType Name="GPDISEASESBYPRACTICECODE">
+          <Key>
+            <PropertyRef Name="Number_of_cases" />
+          </Key>
+          <Property Name="OrganisationCode" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="Ref_Parent_ID" Type="Int32" />
+          <Property Name="indicator_group" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="disease_Name" Type="String" MaxLength="255" FixedLength="true" Unicode="false" />
+          <Property Name="Number_of_cases" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="LATLONG">
+          <Key>
+            <PropertyRef Name="Parent_ID" />
+          </Key>
+          <Property Name="Parent_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Parent_ID" Type="Int32" Nullable="false" />
+          <Property Name="Latitude" Type="Double" />
+          <Property Name="Longitude" Type="Double" />
+        </EntityType>
+        <EntityType Name="NUMBEROFEMPLOYEE">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Organisation_Name" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Organisation_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrganisationCode" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="Parent_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ref_Parent_ID" Type="Int32" />
+          <Property Name="Number_of_Staff" Type="Int32" />
+        </EntityType>
+        <EntityType Name="NUMBEROFPATIENT">
+          <Key>
+            <PropertyRef Name="ID" />
+            <PropertyRef Name="Organisation_Name" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" />
+          <Property Name="Organisation_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" Nullable="false" />
+          <Property Name="OrganisationCode" Type="String" MaxLength="25" FixedLength="true" Unicode="false" />
+          <Property Name="Parent_Name" Type="String" MaxLength="Max" FixedLength="false" Unicode="false" />
+          <Property Name="Ref_Parent_ID" Type="Int32" />
+          <Property Name="Total_Patients" Type="Int32" />
         </EntityType>
         <Association Name="FK__Addresses__Ref_O__1CFC3D38">
           <End Role="Organisation_Details" Type="Self.Organisation_Details" Multiplicity="1" />
@@ -930,7 +1117,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="NHSPatientServicesEntities7" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="NHSPatientServicesEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Addresses" EntityType="Self.Address" />
           <EntitySet Name="Emails" EntityType="Self.Email" />
           <EntitySet Name="Faxes" EntityType="Self.Fax" />
@@ -946,8 +1133,13 @@
           <EntitySet Name="Parents" EntityType="Self.Parent" />
           <EntitySet Name="ParentOrganisations" EntityType="Self.ParentOrganisation" />
           <EntitySet Name="ServicesOrganisations" EntityType="Self.ServicesOrganisation" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagram" />
           <EntitySet Name="Telephones" EntityType="Self.Telephone" />
           <EntitySet Name="Websites" EntityType="Self.Website" />
+          <EntitySet Name="GPDISEASESBYPRACTICECODEs" EntityType="Self.GPDISEASESBYPRACTICECODE" />
+          <EntitySet Name="LATLONGs" EntityType="Self.LATLONG" />
+          <EntitySet Name="NUMBEROFEMPLOYEES" EntityType="Self.NUMBEROFEMPLOYEE" />
+          <EntitySet Name="NUMBEROFPATIENTS" EntityType="Self.NUMBEROFPATIENT" />
           <AssociationSet Name="FK__Addresses__Ref_O__1CFC3D38" Association="Self.FK__Addresses__Ref_O__1CFC3D38">
             <End Role="Organisation_Details" EntitySet="Organisation_Details" />
             <End Role="Addresses" EntitySet="Addresses" />
@@ -1199,7 +1391,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="NHSPatientServicesModelStoreContainer" CdmEntityContainer="NHSPatientServicesEntities7">
+        <EntityContainerMapping StorageEntityContainer="NHSPatientServicesModelStoreContainer" CdmEntityContainer="NHSPatientServicesEntities">
           <EntitySetMapping Name="Addresses">
             <EntityTypeMapping TypeName="NHSPatientServicesModel.Address">
               <MappingFragment StoreEntitySet="Addresses">
@@ -1356,6 +1548,17 @@
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="NHSPatientServicesModel.sysdiagram">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
           <EntitySetMapping Name="Telephones">
             <EntityTypeMapping TypeName="NHSPatientServicesModel.Telephone">
               <MappingFragment StoreEntitySet="Telephone">
@@ -1369,6 +1572,51 @@
               <MappingFragment StoreEntitySet="Website">
                 <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
                 <ScalarProperty Name="Website1" ColumnName="Website" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="GPDISEASESBYPRACTICECODEs">
+            <EntityTypeMapping TypeName="NHSPatientServicesModel.GPDISEASESBYPRACTICECODE">
+              <MappingFragment StoreEntitySet="GPDISEASESBYPRACTICECODE">
+                <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+                <ScalarProperty Name="Ref_Parent_ID" ColumnName="Ref_Parent_ID" />
+                <ScalarProperty Name="indicator_group" ColumnName="indicator_group" />
+                <ScalarProperty Name="disease_Name" ColumnName="disease_Name" />
+                <ScalarProperty Name="Number_of_cases" ColumnName="Number_of_cases" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="LATLONGs">
+            <EntityTypeMapping TypeName="NHSPatientServicesModel.LATLONG">
+              <MappingFragment StoreEntitySet="LATLONG">
+                <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+                <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+                <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+                <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NUMBEROFEMPLOYEES">
+            <EntityTypeMapping TypeName="NHSPatientServicesModel.NUMBEROFEMPLOYEE">
+              <MappingFragment StoreEntitySet="NUMBEROFEMPLOYEES">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Organisation_Name" ColumnName="Organisation_Name" />
+                <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+                <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+                <ScalarProperty Name="Ref_Parent_ID" ColumnName="Ref_Parent_ID" />
+                <ScalarProperty Name="Number_of_Staff" ColumnName="Number_of_Staff" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="NUMBEROFPATIENTS">
+            <EntityTypeMapping TypeName="NHSPatientServicesModel.NUMBEROFPATIENT">
+              <MappingFragment StoreEntitySet="NUMBEROFPATIENTS">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Organisation_Name" ColumnName="Organisation_Name" />
+                <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+                <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+                <ScalarProperty Name="Ref_Parent_ID" ColumnName="Ref_Parent_ID" />
+                <ScalarProperty Name="Total_Patients" ColumnName="Total_Patients" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

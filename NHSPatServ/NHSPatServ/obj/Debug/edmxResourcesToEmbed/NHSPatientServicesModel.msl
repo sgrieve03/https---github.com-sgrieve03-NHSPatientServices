@@ -1,0 +1,397 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="NHSPatientServicesModelStoreContainer" CdmEntityContainer="NHSPatientServicesEntities">
+    <EntitySetMapping Name="Addresses">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Address">
+        <MappingFragment StoreEntitySet="Addresses">
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Address_Line_1" ColumnName="Address_Line_1" />
+          <ScalarProperty Name="Address_Line_2" ColumnName="Address_Line_2" />
+          <ScalarProperty Name="Address_Line_3" ColumnName="Address_Line_3" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="County" ColumnName="County" />
+          <ScalarProperty Name="Postcode" ColumnName="Postcode" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Emails">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Email">
+        <MappingFragment StoreEntitySet="Email">
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Email1" ColumnName="Email" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Faxes">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Fax">
+        <MappingFragment StoreEntitySet="Fax">
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Fax_Number" ColumnName="Fax_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GP_Disease_Prevalence">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.GP_Disease_Prevalence">
+        <MappingFragment StoreEntitySet="GP_Disease_Prevalence">
+          <ScalarProperty Name="GP_Disease_PrevalenceID" ColumnName="GP_Disease_PrevalenceID" />
+          <ScalarProperty Name="Ref_" ColumnName="Ref_" />
+          <ScalarProperty Name="Indicator_Group" ColumnName="Indicator_Group" />
+          <ScalarProperty Name="Disease_Name" ColumnName="Disease_Name" />
+          <ScalarProperty Name="Number_of_cases" ColumnName="Number_of_cases" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GP_Practice_Code">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.GP_Practice_Code">
+        <MappingFragment StoreEntitySet="GP_Practice_Code">
+          <ScalarProperty Name="GP_Practice_CodeID" ColumnName="GP_Practice_CodeID" />
+          <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GP_Ratings">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.GP_Ratings">
+        <MappingFragment StoreEntitySet="GP_Ratings">
+          <ScalarProperty Name="GP_RatingsID" ColumnName="GP_RatingsID" />
+          <ScalarProperty Name="Ref_" ColumnName="Ref_" />
+          <ScalarProperty Name="Q14_On_Same_day" ColumnName="Q14_On_Same_day" />
+          <ScalarProperty Name="Q14_Next_Working_Day" ColumnName="Q14_Next_Working_Day" />
+          <ScalarProperty Name="Q14_Few_Days_Later" ColumnName="Q14_Few_Days_Later" />
+          <ScalarProperty Name="Q14_Week_Or_More" ColumnName="Q14_Week_Or_More" />
+          <ScalarProperty Name="Q14_Cant_Remember" ColumnName="Q14_Cant_Remember" />
+          <ScalarProperty Name="Q28_Very_Good" ColumnName="Q28_Very_Good" />
+          <ScalarProperty Name="Q28_Fairly_Good" ColumnName="Q28_Fairly_Good" />
+          <ScalarProperty Name="Q28_Neither" ColumnName="Q28_Neither" />
+          <ScalarProperty Name="Q28_Fairly_Poor" ColumnName="Q28_Fairly_Poor" />
+          <ScalarProperty Name="Q28_Very_Poor" ColumnName="Q28_Very_Poor" />
+          <ScalarProperty Name="Q29_Definitely_Yes" ColumnName="Q29_Definitely_Yes" />
+          <ScalarProperty Name="Q29_Probably_Yes" ColumnName="Q29_Probably_Yes" />
+          <ScalarProperty Name="Q29_Not_Sure" ColumnName="Q29_Not_Sure" />
+          <ScalarProperty Name="Q29_Probably_Not" ColumnName="Q29_Probably_Not" />
+          <ScalarProperty Name="Q29_Definitely_Not" ColumnName="Q29_Definitely_Not" />
+          <ScalarProperty Name="Q29_Dont_Know" ColumnName="Q29_Dont_Know" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GP_Services">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.GP_Services">
+        <MappingFragment StoreEntitySet="GP_Services">
+          <ScalarProperty Name="Service_ID" ColumnName="Service_ID" />
+          <ScalarProperty Name="GP_Service_Name" ColumnName="GP_Service_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GP_Staff">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.GP_Staff">
+        <MappingFragment StoreEntitySet="GP_Staff">
+          <ScalarProperty Name="GP_StaffID" ColumnName="GP_StaffID" />
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GP_Total_Numbers">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.GP_Total_Numbers">
+        <MappingFragment StoreEntitySet="GP_Total_Numbers">
+          <ScalarProperty Name="GP_Total_NumbersID" ColumnName="GP_Total_NumbersID" />
+          <ScalarProperty Name="Ref_" ColumnName="Ref_" />
+          <ScalarProperty Name="Total_Male" ColumnName="Total_Male" />
+          <ScalarProperty Name="Total_Female" ColumnName="Total_Female" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Locations">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Location">
+        <MappingFragment StoreEntitySet="Location">
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longtitude" ColumnName="Longtitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisation_Details">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Organisation_Details">
+        <MappingFragment StoreEntitySet="Organisation_Details">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="OrganisationNum" ColumnName="OrganisationNum" />
+          <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+          <ScalarProperty Name="Organisation_Name" ColumnName="Organisation_Name" />
+          <ScalarProperty Name="Ref_Organisation_Type_ID" ColumnName="Ref_Organisation_Type_ID" />
+          <ScalarProperty Name="EPS_Enabled" ColumnName="EPS_Enabled" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Organisation_Type">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Organisation_Type">
+        <MappingFragment StoreEntitySet="Organisation_Type">
+          <ScalarProperty Name="Organisation_Type_ID" ColumnName="Organisation_Type_ID" />
+          <ScalarProperty Name="Organisation_Type1" ColumnName="Organisation_Type" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Parents">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Parent">
+        <MappingFragment StoreEntitySet="Parent">
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="ODSCode" ColumnName="ODSCode" />
+          <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ParentOrganisations">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.ParentOrganisation">
+        <MappingFragment StoreEntitySet="ParentOrganisation">
+          <ScalarProperty Name="ParentOrganisationID" ColumnName="ParentOrganisationID" />
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Ref_Parent_ID" ColumnName="Ref_Parent_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="ServicesOrganisations">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.ServicesOrganisation">
+        <MappingFragment StoreEntitySet="ServicesOrganisation">
+          <ScalarProperty Name="ServiceOrganisationID" ColumnName="ServiceOrganisationID" />
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Ref_Service_ID" ColumnName="Ref_Service_ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Telephones">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Telephone">
+        <MappingFragment StoreEntitySet="Telephone">
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Telephone_Number" ColumnName="Telephone_Number" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Websites">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.Website">
+        <MappingFragment StoreEntitySet="Website">
+          <ScalarProperty Name="Ref_Organisation_Details_ID" ColumnName="Ref_Organisation_Details_ID" />
+          <ScalarProperty Name="Website1" ColumnName="Website" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GPDISEASESBYPRACTICECODEs">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.GPDISEASESBYPRACTICECODE">
+        <MappingFragment StoreEntitySet="GPDISEASESBYPRACTICECODE">
+          <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+          <ScalarProperty Name="Ref_Parent_ID" ColumnName="Ref_Parent_ID" />
+          <ScalarProperty Name="indicator_group" ColumnName="indicator_group" />
+          <ScalarProperty Name="disease_Name" ColumnName="disease_Name" />
+          <ScalarProperty Name="Number_of_cases" ColumnName="Number_of_cases" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="LATLONGs">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.LATLONG">
+        <MappingFragment StoreEntitySet="LATLONG">
+          <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+          <ScalarProperty Name="Parent_ID" ColumnName="Parent_ID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NUMBEROFEMPLOYEES">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.NUMBEROFEMPLOYEE">
+        <MappingFragment StoreEntitySet="NUMBEROFEMPLOYEES">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Organisation_Name" ColumnName="Organisation_Name" />
+          <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+          <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+          <ScalarProperty Name="Ref_Parent_ID" ColumnName="Ref_Parent_ID" />
+          <ScalarProperty Name="Number_of_Staff" ColumnName="Number_of_Staff" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="NUMBEROFPATIENTS">
+      <EntityTypeMapping TypeName="NHSPatientServicesModel.NUMBEROFPATIENT">
+        <MappingFragment StoreEntitySet="NUMBEROFPATIENTS">
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Organisation_Name" ColumnName="Organisation_Name" />
+          <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+          <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+          <ScalarProperty Name="Ref_Parent_ID" ColumnName="Ref_Parent_ID" />
+          <ScalarProperty Name="Total_Patients" ColumnName="Total_Patients" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="NHSPatientServicesModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_AverageAllDiseaseInEngland" FunctionName="NHSPatientServicesModel.Store.sp_AverageAllDiseaseInEngland">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_AverageAllDiseaseInEngland_Result">
+          <ScalarProperty Name="Disease_Name" ColumnName="Disease_Name" />
+          <ScalarProperty Name="Average_Number_of_Cases" ColumnName="Average_Number_of_Cases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_AverageAllDiseaseInNHSTrust" FunctionName="NHSPatientServicesModel.Store.sp_AverageAllDiseaseInNHSTrust">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_AverageAllDiseaseInNHSTrust_Result">
+          <ScalarProperty Name="disease_name" ColumnName="disease_name" />
+          <ScalarProperty Name="Average" ColumnName="Average" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_AveragePatientInEngland" FunctionName="NHSPatientServicesModel.Store.sp_AveragePatientInEngland" />
+    <FunctionImportMapping FunctionImportName="sp_AveragePatientInNHSTrust" FunctionName="NHSPatientServicesModel.Store.sp_AveragePatientInNHSTrust" />
+    <FunctionImportMapping FunctionImportName="sp_AverageRatingInEngland" FunctionName="NHSPatientServicesModel.Store.sp_AverageRatingInEngland">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_AverageRatingInEngland_Result">
+          <ScalarProperty Name="Q14_Cant_Remember" ColumnName="Q14_Cant_Remember" />
+          <ScalarProperty Name="Q14_Few_Days_Later" ColumnName="Q14_Few_Days_Later" />
+          <ScalarProperty Name="Q14_Week_Or_More" ColumnName="Q14_Week_Or_More" />
+          <ScalarProperty Name="Q14_Next_Working_Day" ColumnName="Q14_Next_Working_Day" />
+          <ScalarProperty Name="Q14_On_Same_day" ColumnName="Q14_On_Same_day" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_AverageRatingInTrust" FunctionName="NHSPatientServicesModel.Store.sp_AverageRatingInTrust">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_AverageRatingInTrust_Result">
+          <ScalarProperty Name="Q14_Cant_Remember" ColumnName="Q14_Cant_Remember" />
+          <ScalarProperty Name="Q14_Few_Days_Later" ColumnName="Q14_Few_Days_Later" />
+          <ScalarProperty Name="Q14_Week_Or_More" ColumnName="Q14_Week_Or_More" />
+          <ScalarProperty Name="Q14_Next_Working_Day" ColumnName="Q14_Next_Working_Day" />
+          <ScalarProperty Name="Q14_On_Same_day" ColumnName="Q14_On_Same_day" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_AverageSpecificDiseaseInEngland" FunctionName="NHSPatientServicesModel.Store.sp_AverageSpecificDiseaseInEngland">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_AverageSpecificDiseaseInEngland_Result">
+          <ScalarProperty Name="Indicator_Group" ColumnName="Indicator_Group" />
+          <ScalarProperty Name="average" ColumnName="average" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_AverageSpecificDiseaseInNHSTrust" FunctionName="NHSPatientServicesModel.Store.sp_AverageSpecificDiseaseInNHSTrust" />
+    <FunctionImportMapping FunctionImportName="sp_AverageStaffInEngland" FunctionName="NHSPatientServicesModel.Store.sp_AverageStaffInEngland" />
+    <FunctionImportMapping FunctionImportName="sp_AverageStaffInNHSTrust" FunctionName="NHSPatientServicesModel.Store.sp_AverageStaffInNHSTrust" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="NHSPatientServicesModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_diseasesInNhsTrust" FunctionName="NHSPatientServicesModel.Store.sp_diseasesInNhsTrust">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_diseasesInNhsTrust_Result">
+          <ScalarProperty Name="ref_parent_id" ColumnName="ref_parent_id" />
+          <ScalarProperty Name="Average" ColumnName="Average" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="NHSPatientServicesModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="NHSPatientServicesModel.Store.sp_helpdiagramdefinition" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="NHSPatientServicesModel.Store.sp_helpdiagrams" />
+    <FunctionImportMapping FunctionImportName="sp_MaxAllDiseaseInEngland" FunctionName="NHSPatientServicesModel.Store.sp_MaxAllDiseaseInEngland">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_MaxAllDiseaseInEngland_Result">
+          <ScalarProperty Name="Disease_Name" ColumnName="Disease_Name" />
+          <ScalarProperty Name="Max_Number_of_cases" ColumnName="Max_Number_of_cases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MaxAllDiseaseInNHSTrust" FunctionName="NHSPatientServicesModel.Store.sp_MaxAllDiseaseInNHSTrust">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_MaxAllDiseaseInNHSTrust_Result">
+          <ScalarProperty Name="Disease_Name" ColumnName="Disease_Name" />
+          <ScalarProperty Name="Max_Number_of_Cases" ColumnName="Max_Number_of_Cases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MaxSpecificDiseaseInEngland" FunctionName="NHSPatientServicesModel.Store.sp_MaxSpecificDiseaseInEngland" />
+    <FunctionImportMapping FunctionImportName="sp_MaxSpecificDiseaseInNHSTrust" FunctionName="NHSPatientServicesModel.Store.sp_MaxSpecificDiseaseInNHSTrust">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_MaxSpecificDiseaseInNHSTrust_Result">
+          <ScalarProperty Name="Disease_Name" ColumnName="Disease_Name" />
+          <ScalarProperty Name="Max_Number_of_Cases" ColumnName="Max_Number_of_Cases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MinAllDiseaseInEngland" FunctionName="NHSPatientServicesModel.Store.sp_MinAllDiseaseInEngland">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_MinAllDiseaseInEngland_Result">
+          <ScalarProperty Name="Disease_Name" ColumnName="Disease_Name" />
+          <ScalarProperty Name="Min_Number_of_Cases" ColumnName="Min_Number_of_Cases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MinAllDiseaseInNHSTrust" FunctionName="NHSPatientServicesModel.Store.sp_MinAllDiseaseInNHSTrust">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_MinAllDiseaseInNHSTrust_Result">
+          <ScalarProperty Name="disease_name" ColumnName="disease_name" />
+          <ScalarProperty Name="Min_Number_of_Cases" ColumnName="Min_Number_of_Cases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_MinSpecificDiseaseInEngland" FunctionName="NHSPatientServicesModel.Store.sp_MinSpecificDiseaseInEngland" />
+    <FunctionImportMapping FunctionImportName="sp_MinSpecificDiseaseInNHSTrust" FunctionName="NHSPatientServicesModel.Store.sp_MinSpecificDiseaseInNHSTrust" />
+    <FunctionImportMapping FunctionImportName="sp_NameOfTrust" FunctionName="NHSPatientServicesModel.Store.sp_NameOfTrust" />
+    <FunctionImportMapping FunctionImportName="sp_plot" FunctionName="NHSPatientServicesModel.Store.sp_plot">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_plot_Result">
+          <ScalarProperty Name="Parent_Name" ColumnName="Parent_Name" />
+          <ScalarProperty Name="Ref_Parent_ID" ColumnName="Ref_Parent_ID" />
+          <ScalarProperty Name="Latitude" ColumnName="Latitude" />
+          <ScalarProperty Name="Longitude" ColumnName="Longitude" />
+          <ScalarProperty Name="Average_Number_of_Staff" ColumnName="Average_Number_of_Staff" />
+          <ScalarProperty Name="Q14_Cant_Remember" ColumnName="Q14_Cant_Remember" />
+          <ScalarProperty Name="Q14_Week_Or_More" ColumnName="Q14_Week_Or_More" />
+          <ScalarProperty Name="Q14_Next_Working_Day" ColumnName="Q14_Next_Working_Day" />
+          <ScalarProperty Name="Q14_Few_Days_Later" ColumnName="Q14_Few_Days_Later" />
+          <ScalarProperty Name="Q14_On_Same_day" ColumnName="Q14_On_Same_day" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="NHSPatientServicesModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_TotalAllDiseaseInSpecificGP" FunctionName="NHSPatientServicesModel.Store.sp_TotalAllDiseaseInSpecificGP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_TotalAllDiseaseInSpecificGP_Result">
+          <ScalarProperty Name="Disease_Name" ColumnName="Disease_Name" />
+          <ScalarProperty Name="Number_of_cases" ColumnName="Number_of_cases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_TotalPatientInSpecificGP" FunctionName="NHSPatientServicesModel.Store.sp_TotalPatientInSpecificGP" />
+    <FunctionImportMapping FunctionImportName="sp_TotalRatingInGP" FunctionName="NHSPatientServicesModel.Store.sp_TotalRatingInGP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_TotalRatingInGP_Result">
+          <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+          <ScalarProperty Name="Q14_Cant_Remember" ColumnName="Q14_Cant_Remember" />
+          <ScalarProperty Name="Q14_Few_Days_Later" ColumnName="Q14_Few_Days_Later" />
+          <ScalarProperty Name="Q14_Week_Or_More" ColumnName="Q14_Week_Or_More" />
+          <ScalarProperty Name="Q14_Next_Working_Day" ColumnName="Q14_Next_Working_Day" />
+          <ScalarProperty Name="Q14_On_Same_day" ColumnName="Q14_On_Same_day" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_TotalSpecificDiseaseInGP" FunctionName="NHSPatientServicesModel.Store.sp_TotalSpecificDiseaseInGP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_TotalSpecificDiseaseInGP_Result">
+          <ScalarProperty Name="Disease_Name" ColumnName="Disease_Name" />
+          <ScalarProperty Name="Number_of_cases" ColumnName="Number_of_cases" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_TotalStaffInSpecificGP" FunctionName="NHSPatientServicesModel.Store.sp_TotalStaffInSpecificGP">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="NHSPatientServicesModel.sp_TotalStaffInSpecificGP_Result">
+          <ScalarProperty Name="Job_Title" ColumnName="Job_Title" />
+          <ScalarProperty Name="OrganisationCode" ColumnName="OrganisationCode" />
+          <ScalarProperty Name="Total" ColumnName="Total" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="NHSPatientServicesModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

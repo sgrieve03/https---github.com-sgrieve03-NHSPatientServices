@@ -60,6 +60,9 @@
     <Compile Include="Fax.cs">
       <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="GPDISEASESBYPRACTICECODE.cs">
+      <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
+    </Compile>
     <Compile Include="GP_Disease_Prevalence.cs">
       <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
     </Compile>
@@ -76,6 +79,9 @@
       <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="GP_Total_Numbers.cs">
+      <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="LATLONG.cs">
       <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Location.cs">
@@ -95,6 +101,12 @@
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>NHSPatientServicesModel.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="NUMBEROFEMPLOYEE.cs">
+      <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="NUMBEROFPATIENT.cs">
+      <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Organisation_Details.cs">
       <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
@@ -158,6 +170,9 @@
       <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="sp_TotalStaffInSpecificGP_Result.cs">
+      <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
+    </Compile>
+    <Compile Include="sysdiagram.cs">
       <DependentUpon>NHSPatientServicesModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Telephone.cs">
